@@ -2,9 +2,9 @@
 
 行動應用軟體開發課堂練習，使用 Kotlin 與 Jetpack Compose。
 
-目前版本：V0，初始專案。
+目前版本：V1，基本介面。
 
-建立 Kotlin 與 Jetpack Compose 的 Empty Activity 專案。
+用 Column、Text、Spacer、Image 排出置中的骰子畫面。
 
 ## 開啟與建置
 

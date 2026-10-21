@@ -46,7 +46,19 @@ fun Dice(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text("Hello Android!")
+        Text(
+            text = "請點擊圖片隨機丟骰子\n作者：楊子青",
+            textAlign = TextAlign.Center
+        )
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        Image(
+            painter = painterResource(id = R.drawable.dice0),
+            contentDescription = "骰子：尚未擲骰",
+            modifier = Modifier
+                .size(120.dp)
+        )
     }
 }
 
