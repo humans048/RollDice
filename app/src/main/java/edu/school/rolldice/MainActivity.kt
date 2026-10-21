@@ -64,7 +64,7 @@ fun Dice(modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "請點擊圖片隨機丟骰子\n雙擊歸零，長按變成 6 點\n作者：楊子青",
+            text = "請點擊圖片隨機丟骰子\n雙擊歸零，長按變成 6 點\n作者：謝秉育",
             textAlign = TextAlign.Center
         )
 
