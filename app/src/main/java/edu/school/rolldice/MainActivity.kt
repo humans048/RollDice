@@ -26,7 +26,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.ui.input.pointer.pointerInput
 
 
 class MainActivity : ComponentActivity() {
@@ -63,7 +64,7 @@ fun Dice(modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "請點擊圖片隨機丟骰子\n作者：楊子青",
+            text = "請點擊圖片隨機丟骰子\n雙擊歸零，長按變成 6 點\n作者：楊子青",
             textAlign = TextAlign.Center
         )
 
@@ -74,8 +75,18 @@ fun Dice(modifier: Modifier = Modifier) {
             contentDescription = if (diceNumber == 0) "骰子：尚未擲骰" else "骰子：${diceNumber}點",
             modifier = Modifier
                 .size(120.dp)
-                .clickable {
-                    diceNumber = (1..6).random()
+                .pointerInput(Unit) {
+                    detectTapGestures(
+                        onTap = {
+                            diceNumber = (1..6).random()
+                        },
+                        onDoubleTap = {
+                            diceNumber = 0
+                        },
+                        onLongPress = {
+                            diceNumber = 6
+                        }
+                    )
                 }
         )
     }

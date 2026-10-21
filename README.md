@@ -2,9 +2,9 @@
 
 行動應用軟體開發課堂練習，使用 Kotlin 與 Jetpack Compose。
 
-目前版本：V3，點擊圖片隨機擲骰子。
+目前版本：V4，點擊、雙擊及長按圖片。
 
-使用 remember 與 mutableStateOf 保存點數，單擊隨機顯示 1 到 6 點。
+使用 pointerInput 與 detectTapGestures，單擊擲骰子、雙擊歸零、長按固定為 6 點。
 
 ## 開啟與建置
 
