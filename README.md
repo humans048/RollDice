@@ -2,9 +2,9 @@
 
 行動應用軟體開發課堂練習，使用 Kotlin 與 Jetpack Compose。
 
-目前版本：V1，基本介面。
+目前版本：V2，App 名稱與圖示。
 
-用 Column、Text、Spacer、Image 排出置中的骰子畫面。
+設定中文與英文 App 名稱，並以 dice0 作為 App 圖示。
 
 ## 開啟與建置
 
