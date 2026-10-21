@@ -2,9 +2,9 @@
 
 行動應用軟體開發課堂練習，使用 Kotlin 與 Jetpack Compose。
 
-目前版本：V2，App 名稱與圖示。
+目前版本：V3，點擊圖片隨機擲骰子。
 
-設定中文與英文 App 名稱，並以 dice0 作為 App 圖示。
+使用 remember 與 mutableStateOf 保存點數，單擊隨機顯示 1 到 6 點。
 
 ## 開啟與建置
 

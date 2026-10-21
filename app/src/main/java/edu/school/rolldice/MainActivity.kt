@@ -22,6 +22,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import edu.school.rolldice.ui.theme.RollDiceTheme
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.foundation.clickable
 
 
 class MainActivity : ComponentActivity() {
@@ -41,6 +46,17 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Dice(modifier: Modifier = Modifier) {
+    var diceNumber by remember { mutableStateOf(0) }
+    val diceImages = listOf(
+        R.drawable.dice0,
+        R.drawable.dice1,
+        R.drawable.dice2,
+        R.drawable.dice3,
+        R.drawable.dice4,
+        R.drawable.dice5,
+        R.drawable.dice6
+    )
+
     Column(
         modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -54,10 +70,13 @@ fun Dice(modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.height(20.dp))
 
         Image(
-            painter = painterResource(id = R.drawable.dice0),
-            contentDescription = "骰子：尚未擲骰",
+            painter = painterResource(id = diceImages[diceNumber]),
+            contentDescription = if (diceNumber == 0) "骰子：尚未擲骰" else "骰子：${diceNumber}點",
             modifier = Modifier
                 .size(120.dp)
+                .clickable {
+                    diceNumber = (1..6).random()
+                }
         )
     }
 }
